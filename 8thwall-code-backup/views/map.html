@@ -1,0 +1,64 @@
+<!-- Removed components: xrextras-tap-recenter    xrextras-loading    xrextras-runtime-error xrextras-gesture-detector   -->
+<a-scene id='ascene'   
+  xrextras-almost-there
+  xrextras-loading
+  xrextras-runtime-error
+      config-targets="targets: image target side1"
+      listen-ar-ready
+      xrweb="disableWorldTracking: false"
+      renderer="antialias: true;
+                         sortObjects: true;
+                         colorManagement: true;
+                         physicallyCorrectLights: true; "
+      shadow="autoUpdate: true">
+  <a-assets>
+    <a-asset-item id="map" src="../assets/kart-stort-4.glb"></a-asset-item>
+    <a-asset-item id="marker" src="../assets/signneutral.glb"></a-asset-item>
+    <a-asset-item id="locationMarker" src="../assets/location-marker.glb"></a-asset-item>
+    <a-asset-item id="marker-art" src="../assets/signart.glb"></a-asset-item>
+    <a-asset-item id="marker-food" src="../assets/signfood.glb"></a-asset-item>
+    <a-asset-item id="marker-history" src="../assets/signhistory.glb"></a-asset-item>
+    <a-asset-item id="marker-nature" src="../assets/signnature.glb"></a-asset-item>
+    <a-asset-item id="locationMarker" src="../assets/location-marker.glb"></a-asset-item>
+  </a-assets>
+
+    <a-camera 
+    id="camera"
+    raycaster="objects: .cantap"
+    cursor="fuse: false; rayOrigin: mouse;"
+    near="0.03"
+    far="1000">
+    </a-camera>
+  
+
+  
+     <a-entity light="type:directional; castShadow:false; color:white; intensity:3; color:#FFF7EC" position="5 10 7"></a-entity>
+      <a-light type="ambient" color="#D8EDFF" intensity="1"></a-light>
+     
+    
+  <a-entity smart-target="name: image target side1">
+      <a-entity rotation="90 0 0">
+          <a-entity rotation="0 -90 0" >
+              <a-entity id="place-in-me" pinch-scale rotation="0 0 0" scale="0.35 0.35 0.35" position="-6 0 -0.5">
+                <a-entity gltf-model="#map" rotation="0 0 0"></a-entity>
+              </a-entity>
+          </a-entity>
+     </a-entity>
+  </a-entity>
+
+    
+
+
+  <!--<a-plane 
+  
+  
+    <a-plane height="10000" width="10000" rotation="-90 0 0" material="shader: shadow; opacity: 0.67" shadow></a-plane>
+        position="0 2 -2" 
+        height="2" 
+        width="4" 
+        rotate="-90 0 0"
+        color="#c4c4c4"
+        ol="  map: map;
+              pixToVRRatio:150;"
+     ></a-plane>-->
+</a-scene>

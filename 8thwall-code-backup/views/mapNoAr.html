@@ -1,0 +1,39 @@
+<!-- Removed components: xrextras-tap-recenter -->
+<a-scene id='ascene' gesture-detector background="color: lightgrey"
+    listen-loaded
+    renderer="antialias: false;
+                         sortObjects: false;
+                         colorManagement: true;
+                         physicallyCorrectLights: true; "
+      shadow="autoUpdate: true">
+  <a-assets>
+    <!-- Credit to Poly by Google for the model: https://poly.google.com/view/5ZMAz7_ucTn -->
+    <a-asset-item id="sandCastleModel" src="../assets/kart-stort-4.glb"></a-asset-item>
+    <a-asset-item id="marker" src="../assets/signneutral.glb"></a-asset-item>
+    <a-asset-item id="marker-art" src="../assets/signart.glb"></a-asset-item>
+    <a-asset-item id="marker-food" src="../assets/signfood.glb"></a-asset-item>
+    <a-asset-item id="marker-history" src="../assets/signhistory.glb"></a-asset-item>
+    <a-asset-item id="marker-nature" src="../assets/signnature.glb"></a-asset-item>
+    <a-asset-item id="locationMarker" src="../assets/location-marker.glb"></a-asset-item>
+  </a-assets>
+  <a-entity light="target: #place-in-me type: directional;
+      intensity: 0.8;
+      castShadow: true;
+      shadowMapHeight:2048;
+      shadowMapWidth:2048;
+      shadowCameraTop: 10;"></a-entity>
+  <!--<a-entity light="type:directional; castShadow:true; color:white; intensity:1.0" position="5 10 7"></a-entity>-->
+    <!--<a-entity id="camera-rig" position="0 10 0" rotation="-70 0 0">-->
+      <a-entity id="camera" camera raycaster="objects: .cantap" look-controls="enabled: false" orbit-controls="target: 25 0 30; minDistance: 0.5; maxDistance: 30; enableRotate: false; keyPanSpeed: 100.0; initialPosition: 25 20 45"
+        cursor="fuse: false; rayOrigin: mouse;"
+        near="1"
+        far="300"
+        >
+      </a-entity>
+   <!-- </a-entity>-->
+  <a-entity id="place-in-me" class="cantap" rotation="0 0 0" scale="1 1 1" shadow="receive: false">
+    <a-entity gltf-model="#sandCastleModel" class="cantap"></a-entity>
+  </a-entity>
+
+  <a-plane id="ground" height="2000" width="2000" rotation="-90 0 0" material="shader: shadow; opacity: 0.67;" shadow></a-plane>
+</a-scene>

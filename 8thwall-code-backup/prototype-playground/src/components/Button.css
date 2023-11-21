@@ -1,0 +1,17 @@
+.button {
+  border-radius: 1rem;
+  padding: 0.25rem 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.button-outlined {
+  border: solid 0.1rem #129692;
+  color: #129692;
+  background: white;
+}
+
+.button-regular {
+  background: #129692;
+  color: white;
+}

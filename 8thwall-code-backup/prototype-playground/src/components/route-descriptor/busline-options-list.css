@@ -1,0 +1,29 @@
+.route-descriptor > ul {
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.busline-options-list li {
+  list-style: none;
+  text-align: start;
+  display: inline-flex;
+  align-items: center;
+  flex-grow: 0;
+  width: 100%;
+}
+
+.busline-options-list svg {
+  flex-basis: 80px;
+}
+
+.busline-options-list h3 {
+  flex-basis: 100%;
+  margin-left: 0.5rem;
+  font-size: 1.75rem;
+}
+
+.busline-options-list p {
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+  flex-basis: 100%;
+}
